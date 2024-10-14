@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+}
+/* クリックされた日付を緑色にするクラス */
+.selected-date {
+    background-color: #d4edda !important; /* 緑色の背景色 */
+    border: 2px solid #28a745 !important; /* 緑色の枠線 */
+  }
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.day {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+}
+
+.day input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+.summary {
+    text-align: center;
+    margin-top: 20px;
+}
