@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 月が切り替わったときに選択済みの日付を再表示
         datesSet: function(info) {
-            var currentMonth = info.start.getMonth(); // 現在の月（0: 1月, 1: 2月, ..., 11: 12月）
+            var currentMonth = info.start.getMonth(); // 現在の月
             var currentYear = info.start.getFullYear(); // 現在の年
             var currentYearMonthKey = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}`;
 
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 var [year, month, day] = dayDate.split('-').map(Number);
                 var dateKey = `${year}-${month.toString().padStart(2, '0')}`;
 
-                // 現在の月内で選択されている日付のみをマーク
-                if (dateKey === currentYearMonthKey && selectedDates[dateKey] && selectedDates[dateKey][day]) {
+                // 現在の月と年に一致する日付が選択されている場合は再度マーク
+                if (dateKey in selectedDates && selectedDates[dateKey][day]) {
                     dayEl.classList.add('selected-date');
                     completedDaysCount++; // カウントを増やす
                 }
@@ -35,10 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         dateClick: function(info) {
             var clickedDate = info.dateStr; // クリックした日付の文字列形式 "YYYY-MM-DD"
-            var clickedMonth = info.date.getMonth(); // クリックした日付の月（0: 1月, 1: 2月, ..., 11: 12月）
+            var clickedMonth = info.date.getMonth(); // クリックした日付の月（0: 1月, 1: 2月, ..., 9: 10月）
             var currentMonth = calendar.getDate().getMonth(); // 現在表示中の月
 
-            // 現在表示中の月内の日付のみ処理
             if (clickedMonth !== currentMonth) {
                 return; // 他の月の日付なら何もしない
             }
