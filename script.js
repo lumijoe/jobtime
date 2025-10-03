@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var clickedDate = info.dateStr; // クリックした日付の文字列形式 "YYYY-MM-DD"
             var clickedMonth = info.date.getMonth(); // クリックした日付の月（0: 1月, 1: 2月, ..., 9: 10月）
             var currentMonth = calendar.getDate().getMonth(); // 現在表示中の月
+            var coinSound = document.getElementById("coin-sound"); // 追加時クリックの際の効果音
 
             if (clickedMonth !== currentMonth) {
                 return; // 他の月の日付なら何もしない
