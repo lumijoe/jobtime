@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let completedDaysCount = 0; // 完了日数のカウンター
 
     // 年と月をキーとしたオブジェクトを用意して、選択された日付を保存
-    let selectedDates = JSON.parse(localStorage.getItem('selectedDates')) || {}; // ローカルストレージからデータを取得
+    const selectedDates = JSON.parse(localStorage.getItem('selectedDates')) || {}; // ローカルストレージからデータを取得
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
