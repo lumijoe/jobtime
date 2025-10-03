@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 info.dayEl.classList.add('selected-date');
                 selectedDates[clickedYearMonthKey][info.date.getDate()] = true; // 選択された日付を保存
                 completedDaysCount++; // カウンターを増やす
+                // 効果音：追加音の再生
+                coinSound.currentTime = 0; // 先頭に戻す
+                coinSound.play();
             }
 
             // localStorageに選択された日付を保存
