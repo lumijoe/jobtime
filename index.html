@@ -14,18 +14,45 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <h1>Job Time Card</h1>
+    <!-- header -->
+    <header>
+      <h1>Job Time Card</h1>
+    </header>
 
-    <div class="container">
-      <div class="summary">
-        <p>Completed Days: <span id="completed-days">0</span></p>
+    <!-- main -->
+    <main>
+      <div class="container">
+        <div class="summary">
+          <p>Completed Days: <span id="completed-days">0</span></p>
+        </div>
+        <div id="calendar"></div>
       </div>
-      <div id="calendar"></div>
+    </main>
+
+    <!-- footer -->
+    <footer class="bottom-nav">
+      <button class="nav-icon" id="settlementBtn">
+        <span>💰</span>
+        <span>精算</span>
+      </button>
+    </footer>
+
+    <!-- ポップアップ -->
+    <div class="popup-overlay" id="settlementPopup">
+      <div class="popup-content">
+        <h2>精算結果</h2>
+        <div class="amount-display">
+          <span id="settlementAmount">1,500円</span>
+        </div>
+        <button class="share-btn" id="shareBtn">📤 共有する</button>
+        <button class="close-btn" id="closeBtn">閉じる</button>
+      </div>
     </div>
 
     <!-- 効果音：追加時 -->
     <audio id="coin-sound" src="coin.mp3" preload="auto"></audio>
-
+    <!-- script -->
     <script src="script.js"></script>
+    <script src="share.js"></script>
   </body>
 </html>
