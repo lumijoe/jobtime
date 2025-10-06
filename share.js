@@ -30,11 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function shareToLine() {
     const completedDays = parseInt(document.getElementById('completed-days').textContent);
     const amountText = document.getElementById('settlementAmount').textContent;
-    const text = `精算金額: ${amountText} (${completedDays}日)`;
+    const title = `今月のバイト精算金額`;
+    const text = `${amountText} (${completedDays}日)`;
     
     if (navigator.share) {
       navigator.share({
-        title: '今月のバイト精算結果',
+        title: title,
         text: text
       }).catch(err => console.log('共有キャンセル'));
     } else {
