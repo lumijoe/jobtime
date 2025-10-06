@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 共有ボタン
   document.getElementById('shareBtn').addEventListener('click', () => {
-    const amount = 1500; // とりあえず仮の金額
-    shareToLine(amount);
+    shareToLine();
   });
 
   // LINE共有関数
-  function shareToLine(amount) {
+  function shareToLine() {
     const completedDays = parseInt(document.getElementById('completed-days').textContent);
-    const text = `精算金額: ${amount.toLocaleString()}円(${completedDays}日)`;
+    const amountText = document.getElementById('settlementAmount').textContent;
+    const text = `精算金額: ${amountText}円(${completedDays}日)`;
     
     if (navigator.share) {
       navigator.share({
-        title: '精算結果',
+        title: '今月のバイト精算結果',
         text: text
       }).catch(err => console.log('共有キャンセル'));
     } else {
