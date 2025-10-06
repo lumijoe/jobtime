@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function shareToLine() {
     const completedDays = parseInt(document.getElementById('completed-days').textContent);
     const amountText = document.getElementById('settlementAmount').textContent;
-    const text = `精算金額: ${amountText}&nbsp;(${completedDays}日)`;
+    const text = `精算金額: ${amountText} (${completedDays}日)`;
     
     if (navigator.share) {
       navigator.share({
