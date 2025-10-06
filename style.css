@@ -64,4 +64,18 @@ body {
   background: white;
   padding: 20px;
   border-radius: 10px;
+  width: 60%;
+}
+
+.close-btn {
+  position: absolute;
+  top: -9%;
+  right: -12%;
+  background-color: transparent;
+  border: none;
+}
+.close-btn-img {
+  width: 40px;
+  border-radius: 90px;
+  background-color: #ffffffe6;
 }
