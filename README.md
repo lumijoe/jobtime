@@ -19,6 +19,17 @@ CRUD機能の、CRを省きユーザーに面倒な気持ちを抱かせる事�
   - ユーザーが手動でブラウザのデータを削除するまで残る
   - ドメインごとに約5〜10MBまで保存可能
 
+- 注意事項
+localStorage の selectedDates キー
+安全な変更：
+✅ CSS（style.css）の変更
+✅ HTML（index.html）の見た目の変更
+✅ JavaScriptで表示ロジックの変更（localStorageに書き込まなければ）
+危険な操作：
+❌ localStorage.setItem('selectedDates', ...) を変更
+❌ localStorage.clear() を実行
+❌ ブラウザのデータ削除
+
 ## アップデートログ
 ・2025/10：精算金額を自動計算かつ共有する機能を追加しました
 ・2025/10：追加した時に現金らしさを感じてもらうべく効果音を追加しました
