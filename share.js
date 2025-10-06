@@ -31,11 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const completedDays = parseInt(document.getElementById('completed-days').textContent);
     const amountText = document.getElementById('settlementAmount').textContent;
     const title = `今月のバイト精算金額`;
-    const text = `${amountText} (${completedDays}日)`;
+    const text = `${title}：${amountText} (${completedDays}日)`;
     
     if (navigator.share) {
       navigator.share({
-        title: title,
         text: text
       }).catch(err => console.log('共有キャンセル'));
     } else {
