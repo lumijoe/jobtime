@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 completedDaysCount++; // カウンターを増やす
                 // 効果音：追加音の再生
                 coinSound.currentTime = 0; // 先頭に戻す
+                coinSound.volume = 0.5; 
                 coinSound.play();
             }
 
