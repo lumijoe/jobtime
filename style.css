@@ -70,12 +70,12 @@ body {
 .close-btn {
   position: absolute;
   top: -9%;
-  right: -12%;
+  right: -12px;
   background-color: transparent;
   border: none;
 }
 .close-btn-img {
   width: 40px;
   border-radius: 90px;
-  background-color: #ffffffe6;
+  background-color: #ffffff38;
 }
