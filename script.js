@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 月が切り替わったときに選択済みの日付を再表示
         datesSet: function(info) {
-            const currentMonth = info.start.getMonth(); // 現在の月
-            const currentYear = info.start.getFullYear(); // 現在の年
+            const currentMonth = calendar.getDate().getMonth(); // 現在の月
+            const currentYear = calendar.getDate().getFullYear(); // 現在の年
             const currentYearMonthKey = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}`;
 
             completedDaysCount = 0; // カウントをリセット
@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 現在の月と年に一致する日付が選択されている場合は再度マーク
                 if (dateKey in selectedDates && selectedDates[dateKey][day]) {
                     dayEl.classList.add('selected-date');
-                    completedDaysCount++; // カウントを増やす
+                    // 今月だけカウント
+                    if (dateKey === currentYearMonthKey) {
+                        completedDaysCount++;
+                    }
                 }
             });
 
